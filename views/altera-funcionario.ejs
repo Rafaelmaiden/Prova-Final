@@ -1,0 +1,71 @@
+<%- contentFor('conteudo') %>
+<% if(locals.msg){ %>
+  <div style="text-align: center;  font-size: 18px" class="msg alert alert-success" role="alert">
+    <%= msg %>
+  </div>
+  <% }%>
+  <div style="margin-bottom: 5%;" class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Atualização de Dados do Funcionário</h5>
+            <br>
+            <br>          
+            <form action="/funcionarios/<%= funcionario._id %>?_method=put" method="POST">
+
+              <!-- Nome -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" >Nome</span>
+                </div>
+                <input type="text" class="form-control" name="nome" value="<%= funcionario.nome %>">
+              </div>
+
+              <!-- Sobrenome -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Sobrenome</span>
+                </div>
+                <input type="text" class="form-control" name="sobrenome" value="<%= funcionario.sobrenome %>">
+              </div>
+
+              <!-- CPF -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">CPF</span>
+                </div>
+                <input type="text" class="form-control" name="cpf" value="<%= funcionario.cpf %>">
+              </div>
+
+              <!--Endereço -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Endereço</span>
+                </div>
+                <input class="form-control" type="text" name="endereco" value="<%= funcionario.endereco %>">
+              </div>
+
+              <!-- Tempo de Serviço -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Tempo de Serviço</span>
+                </div>
+                <input type="text" class="form-control" name="tempo_de_servico" value="<%= funcionario.tempo_de_servico %>">
+              </div>
+
+              <!-- Remuneração -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Remuneração</span>
+                </div>
+                <input type="text" class="form-control" name="remuneracao" value="<%= funcionario.remuneracao %>">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

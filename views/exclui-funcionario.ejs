@@ -1,0 +1,30 @@
+<%- contentFor('conteudo') %>
+<% if(locals.msg){ %>
+  <div style="text-align: center;  font-size: 18px" class="msg alert alert-success" role="alert">
+    <%= msg %>
+  </div>
+  <% }%>
+  <div style="margin-bottom: 20%;" class="container mt-5">
+    <div style=" margin-top: 10%" class="card">
+      <div class="card-body">
+        <h5 class="card-title">Exclusão de Funcionário</h5>
+
+        <p class="card-text">
+          Você tem certeza que quer excluir o funcionário 
+          <b><%= funcionario.nome %></b>
+        </p>
+
+        <form action="/funcionarios/<%= funcionario._id %>?_method=delete" method="post">
+
+          <hr />
+          <div class="text-right">
+            <a href="/funcionarios/" 
+              class="btn btn-outline-danger">
+                Cancelar
+            </a>
+            <button class="btn btn-danger">Excluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
